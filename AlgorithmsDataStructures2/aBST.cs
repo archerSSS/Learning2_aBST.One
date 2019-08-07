@@ -31,11 +31,8 @@ namespace AlgorithmsDataStructures2
 
         public int AddKey(int key)
         {
-            if (Tree[0] != null)
-            {
-                int index = GetIndex(key);
-                return index;
-            }
+            int index = GetIndex(key);
+            if (index > -1) return index;
             // добавляем ключ в массив
             return -1;
             // индекс добавленного/существующего ключа или -1 если не удалось
