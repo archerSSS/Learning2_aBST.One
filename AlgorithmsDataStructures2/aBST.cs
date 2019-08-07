@@ -21,6 +21,7 @@ namespace AlgorithmsDataStructures2
             int index = 0;
             while (index < Tree.Length)
             {
+                if (Tree[index] == null) return -index; 
                 if (Tree[index] == key) return index;
                 else if (Tree[index] > key) index = index * 2 + 1;
                 else index = index * 2 + 2;

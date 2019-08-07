@@ -157,6 +157,74 @@ namespace AlgoTest_1
             Assert.AreEqual(null, abst.FindKeyIndex(17));
         }
 
+        [TestMethod]
+        public void TestFind_4()
+        {
+            aBST abst = new aBST(3);
+            abst.AddKey(16);
+            
+            Assert.AreEqual(-1, abst.FindKeyIndex(10));
+            Assert.AreEqual(-2, abst.FindKeyIndex(18));
+
+            abst.AddKey(18);
+
+            Assert.AreEqual(2, abst.FindKeyIndex(18));
+            Assert.AreEqual(-6, abst.FindKeyIndex(20));
+        }
+
+        [TestMethod]
+        public void TestOverAll_1()
+        {
+            aBST abst = new aBST(4);
+
+            Assert.AreEqual(0, abst.AddKey(16));
+
+            Assert.AreEqual(1, abst.AddKey(4));
+            Assert.AreEqual(2, abst.AddKey(24));
+
+            Assert.AreEqual(3, abst.AddKey(-2));
+            Assert.AreEqual(4, abst.AddKey(12));
+            Assert.AreEqual(5, abst.AddKey(20));
+            Assert.AreEqual(6, abst.AddKey(28));
+
+            Assert.AreEqual(7, abst.AddKey(-3));
+            Assert.AreEqual(8, abst.AddKey(-1));
+            Assert.AreEqual(9, abst.AddKey(8));
+            Assert.AreEqual(10, abst.AddKey(14));
+            Assert.AreEqual(11, abst.AddKey(18));
+            Assert.AreEqual(12, abst.AddKey(22));
+            Assert.AreEqual(13, abst.AddKey(26));
+            Assert.AreEqual(14, abst.AddKey(30));
+
+            Assert.AreEqual(14, abst.AddKey(30));
+            Assert.AreEqual(-1, abst.AddKey(32));
+
+            Assert.AreEqual(0, abst.FindKeyIndex(16));
+
+            Assert.AreEqual(1, abst.FindKeyIndex(4));
+            Assert.AreEqual(2, abst.FindKeyIndex(24));
+
+            Assert.AreEqual(3, abst.FindKeyIndex(-2));
+            Assert.AreEqual(4, abst.FindKeyIndex(12));
+            Assert.AreEqual(5, abst.FindKeyIndex(20));
+            Assert.AreEqual(6, abst.FindKeyIndex(28));
+
+            Assert.AreEqual(7, abst.FindKeyIndex(-3));
+            Assert.AreEqual(8, abst.FindKeyIndex(-1));
+            Assert.AreEqual(9, abst.FindKeyIndex(8));
+            Assert.AreEqual(10, abst.FindKeyIndex(14));
+            Assert.AreEqual(11, abst.FindKeyIndex(18));
+            Assert.AreEqual(12, abst.FindKeyIndex(22));
+            Assert.AreEqual(13, abst.FindKeyIndex(26));
+            Assert.AreEqual(14, abst.FindKeyIndex(30));
+
+            abst.Tree[14] = null;
+
+            Assert.AreEqual(-14, abst.FindKeyIndex(30));
+            Assert.AreEqual(14, abst.AddKey(30));
+            Assert.AreEqual(14, abst.FindKeyIndex(30));
+        }
+
 
 
         /*
