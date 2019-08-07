@@ -5,13 +5,13 @@ namespace AlgorithmsDataStructures2
 {
     public class aBST
     {
-        public int?[] Tree; // массив ключей
+        public int?[] Tree;
 
         public aBST(int depth)
         {
             depth = 1 << (depth - 1);
-            // правильно рассчитайте размер массива для дерева глубины depth:
             int tree_size = depth | (depth - 1);
+            if (tree_size < 0) tree_size = 0; 
             Tree = new int?[tree_size];
             for (int i = 0; i < tree_size; i++) Tree[i] = null;
         }
@@ -31,17 +31,8 @@ namespace AlgorithmsDataStructures2
 
         public int AddKey(int key)
         {
-            int index = GetIndex(key);
-            if (index > -1) return index;
-            // добавляем ключ в массив
-            return -1;
-            // индекс добавленного/существующего ключа или -1 если не удалось
-        }
-
-        private int GetIndex(int key)
-        {
             int index = 0;
-            while(index < Tree.Length) 
+            while (index < Tree.Length)
             {
                 if (Tree[index] == null)
                 {
@@ -54,7 +45,9 @@ namespace AlgorithmsDataStructures2
                     index = index * 2 + 1;
                 else index = index * 2 + 2;
             }
+            // добавляем ключ в массив
             return -1;
+            // индекс добавленного/существующего ключа или -1 если не удалось
         }
     }
 }
