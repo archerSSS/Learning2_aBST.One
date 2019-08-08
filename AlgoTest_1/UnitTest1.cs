@@ -10,7 +10,7 @@ namespace AlgoTest_1
         [TestMethod]
         public void TestAdd_1()
         {
-            aBST abst = new aBST(5); 
+            aBST abst = new aBST(4); 
             abst.AddKey(16);    
 
             abst.AddKey(8);     
@@ -67,7 +67,7 @@ namespace AlgoTest_1
         [TestMethod]
         public void TestAdd_3()
         {
-            aBST abst = new aBST(2);
+            aBST abst = new aBST(1);
             Assert.AreEqual(0, abst.AddKey(16));
             Assert.AreEqual(2, abst.AddKey(74));
             Assert.AreEqual(1, abst.AddKey(-329));
@@ -78,7 +78,7 @@ namespace AlgoTest_1
         public void TestAdd_4()
         {
             aBST abst = new aBST(0);
-            Assert.AreEqual(-1, abst.AddKey(16));
+            Assert.AreEqual(0, abst.AddKey(16));
             Assert.AreEqual(-1, abst.AddKey(74));
             Assert.AreEqual(-1, abst.AddKey(-329));
             Assert.AreEqual(-1, abst.AddKey(-339));
@@ -86,13 +86,15 @@ namespace AlgoTest_1
             aBST abst2 = new aBST(1);
 
             Assert.AreEqual(0, abst2.AddKey(16));
-            Assert.AreEqual(-1, abst2.AddKey(11));
+            Assert.AreEqual(1, abst2.AddKey(11));
+            Assert.AreEqual(2, abst2.AddKey(19));
+            Assert.AreEqual(-1, abst2.AddKey(10));
         }
 
         [TestMethod]
         public void TestAdd_5()
         {
-            aBST abst = new aBST(10);
+            aBST abst = new aBST(9);
             Assert.AreEqual(1023, abst.Tree.Length);
         }
 
@@ -149,7 +151,7 @@ namespace AlgoTest_1
             Assert.AreEqual(23, b2);
             Assert.AreEqual(-1, b3);
 
-            Assert.AreEqual(null, abst.FindKeyIndex(20));
+            Assert.AreEqual(-24, abst.FindKeyIndex(20));
             Assert.AreEqual(0, abst.FindKeyIndex(16));
             Assert.AreEqual(5, abst.FindKeyIndex(22));
             Assert.AreEqual(11, abst.FindKeyIndex(19));
@@ -160,7 +162,7 @@ namespace AlgoTest_1
         [TestMethod]
         public void TestFind_4()
         {
-            aBST abst = new aBST(3);
+            aBST abst = new aBST(2);
             abst.AddKey(16);
             
             Assert.AreEqual(-1, abst.FindKeyIndex(10));
@@ -175,7 +177,7 @@ namespace AlgoTest_1
         [TestMethod]
         public void TestOverAll_1()
         {
-            aBST abst = new aBST(4);
+            aBST abst = new aBST(3);
 
             Assert.AreEqual(0, abst.AddKey(16));
 
@@ -236,7 +238,7 @@ namespace AlgoTest_1
              */
         private aBST GetTree_1()
         {
-            aBST abst = new aBST(5);
+            aBST abst = new aBST(4);
             abst.AddKey(16);
             abst.AddKey(8);
             abst.AddKey(4);

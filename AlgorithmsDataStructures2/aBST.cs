@@ -9,7 +9,7 @@ namespace AlgorithmsDataStructures2
 
         public aBST(int depth)
         {
-            depth = 1 << (depth - 1);
+            depth = 1 << (depth);
             int tree_size = depth | (depth - 1);
             if (tree_size < 0) tree_size = 0; 
             Tree = new int?[tree_size];

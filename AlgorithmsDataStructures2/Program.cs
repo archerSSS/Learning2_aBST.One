@@ -10,9 +10,12 @@ namespace AlgorithmsDataStructures2
     {
         public static void Main(string[] args)
         {
-            int depth = 7;
-            int result = 1 << (depth - 1);
-            result |= result - 1;
+            int i = -2;
+            int[] t = new int[i];
+            aBST bst = new aBST(0);
+            aBST bst2 = new aBST(1);
+            aBST bst3 = new aBST(2);
+            aBST bst4 = new aBST(3);
         }
     }
 }
